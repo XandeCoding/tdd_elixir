@@ -1,12 +1,16 @@
 defmodule TddElixir.Leiloes do
-    @lances []
+    defstruct lances: []
 
-    def propoe(lance) do
-       @lances ++ lance
+    def propoe(leilao, lance) do
+        if leilao.lances == [] do
+            %TddElixir.Leiloes{ lances: [ lance ]}
+        else
+            %TddElixir.Leiloes{ lances: [ lance | leilao.lances]}
+        end
     end
 
-    def getLances() do
-        @lances
+    def getLances(leilao) do
+        leilao.lances
     end
 
 end
