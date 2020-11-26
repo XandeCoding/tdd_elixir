@@ -1,6 +1,6 @@
 # TddElixir
 
-**TODO: Add description**
+Exemplo de uma aplicação simples de leilões usando tdd
 
 ## Installation
 
