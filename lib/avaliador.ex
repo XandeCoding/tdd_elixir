@@ -6,9 +6,9 @@ defmodule TddElixir.Avaliador do
     Enum.max_by(lances, fn element -> element.valor end, fn -> nil end)
   end
 
-  @spec getMenorLanceLeilao(atom | %{getLances: any}) :: any
-  def getMenorLanceLeilao(leilao) do
-    Enum.min(leilao.getLances())
+  def getMenorLance(leilao) do
+    lances = TddElixir.Leiloes.getLances(leilao)
+    Enum.min_by(lances, &(&1.valor))
   end
 
 end

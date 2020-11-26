@@ -5,7 +5,12 @@ defmodule TddElixir.Leiloes do
         if leilao.lances == [] do
             %TddElixir.Leiloes{ lances: [ lance ]}
         else
-            %TddElixir.Leiloes{ lances: [ lance | leilao.lances]}
+            [ head | _ ] = leilao.lances
+            unless head == lance do
+                %TddElixir.Leiloes{ lances: [ lance | leilao.lances]}
+            else
+                leilao
+            end
         end
     end
 
